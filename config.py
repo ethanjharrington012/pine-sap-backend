@@ -15,6 +15,7 @@ class Config():
         Using Envorinment variables where available
         create config variables if not done already.
     """
+    FLASK_DEBUG = os.environ.get('FLASK_DEBUG')
     FLASK_APP = os.environ.get('FLASK_APP')
     FLASK_ENV = os.environ.get('FLASK_ENV')
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'You will never guess'

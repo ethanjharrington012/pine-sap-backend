@@ -2,17 +2,51 @@
 
 {% block content %}
 
-<header class="hero-section">
-    <h3 class="header-text">Welcome to Pine Sap</h3>
+<!-- FLask Flash Message to User -->
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for cat, msg in messages %}
+            {% if cat == 'auth-success' %}
+                <div class="container">
+                    {{ msg }}
+                    <button type="button" class="close" data-dismiss="alert" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<header class="artist-section">
+    <h3 class="header-text">Welcome to Pine Sap, {{ current_user.email }}</h3>
+    <main class="conatiner artist_form">
+        <div class="row">
+            <aside class="col-12 col-md-6">
+                <h2>Store Your Favorite Artist</h2>
+                {% include "artist_form.html" %}
+            </aside>
+        </div>
+    </main>
+
 </header>
 
 <div class="container">
-    <h3>Here are your profile details</h3>
-
-    <ul class="list-group">
-        <li class="list-group-item">Email: </li>
-        <li class="list-group-item">Token: </li>
-    </ul>
+    <h3>Here are your profile details:</h3>
+    <li class="list-group-item">Email: {{ current_user.email }}</li>
+    <li class="list-group-item">Token: {{ current_user.token }}</li>
+    <div class="row">
+        {% for artist in artists %}
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="../../static/images/card.jpeg" alt="card-image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ artist.artist_name }} {{ artist.fav_song }}</h5>
+                    <p class="card-text">{{ artist.description }}</p>
+                    <p>{{ artist.artist_rating }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock content %}

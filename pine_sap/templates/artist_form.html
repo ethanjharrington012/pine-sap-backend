@@ -1,0 +1,27 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="your_name-field">
+            {{ form.your_name.label }}
+            {{ form.your_name(class = "form-control", placeholder="Your Name") }}
+        </fieldset>
+        <fieldset id="artist_name-field">
+            {{ form.artist_name.label }}
+            {{ form.artist_name(class = "form-control", placeholder="Artist Name") }}
+        </fieldset>
+        <fieldset id="description-field">
+            {{ form.description.label }}
+            {{ form.description(class = "form-control", placeholder="Description") }}
+        </fieldset>
+        <fieldset id="fav_song-field">
+            {{ form.fav_song.label }}
+            {{ form.fav_song(class = "form-control", placeholder="Favorite Song") }}
+        </fieldset>
+        <fieldset id="artist_rating-field">
+            {{ form.artist_rating.label }}
+            {{ form.artist_rating(class = "form-control", placeholder="Artist Rating") }}
+        </fieldset>
+        <!-- Submit Button Area -->
+        {{ form.submit_button(class = "btn btn-primary btn-block mt-2") }}
+    </div>
+</form>

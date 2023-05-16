@@ -1,2 +1,4 @@
+.env
 pine_sap_env
+migrations
 __pycache__

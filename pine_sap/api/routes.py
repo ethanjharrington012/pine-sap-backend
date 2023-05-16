@@ -8,6 +8,8 @@ api = Blueprint('api',__name__, url_prefix = '/api')
 def getdata():
     return {'some':'value'}
 
+
+
 @api.route('/artists', methods = ["POST"])
 @token_required
 def create_artist(our_user):
@@ -51,7 +53,7 @@ def get_artist(our_user, id):
         response = artist_schema.dump(artist)
         return jsonify(response)
     else:
-        return jsonify({'messagte': 'Valid Id Required'}), 401
+        return jsonify({'message': 'Valid Id Required'}), 401
 
 
 @api.route('/artists/<id>', methods=['PUT'])

@@ -6,7 +6,19 @@
     display: flex;
     justify-content: space-between;
 }
+#navbar_img {
+    height: 50px; /* Adjust the desired height */
+    width: auto; /* This will maintain the aspect ratio */
+}
 
+.nav_link {
+    color: darkgreen;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+.nav_link:hover {
+    color: limegreen;
+}
 /* Target Main Image */
 .ct-nav img {
     width: 25%;
@@ -50,8 +62,61 @@ ul#horizontal-list a {
 #middle-text h2 {
     padding: 1.5vw;
 }
+/* caresol images */
+.carousel-item {
+    height: 600px; /* Adjust the desired height */
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 /* end of middle section */
+
+/* previeouse shows (undernerath caresel */
+.row-with-image {
+    margin-bottom: 20px;
+}
+
+.row-with-image .col-image {
+    display: flex;
+    align-items: center;
+}
+
+.row-with-image img {
+    width: 100%;
+    max-width: 170px; /* Adjust the maximum width of the image */
+    margin-right: 20px;
+}
+
+.row-with-image .col-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.row-with-image h4 {
+    font-size: 20px; /* Adjust the font size of the title */
+    margin-bottom: 10px;
+}
+
+.row-with-image p {
+    margin-bottom: 10px;
+}
+
+.row-with-image .col-button {
+    display: flex;
+    align-items: center;
+}
+
+.row-with-image .btn {
+    margin-left: auto;
+}
+
+/* end of previeouse shows */
 /* Features Section */
 
 #features-section {

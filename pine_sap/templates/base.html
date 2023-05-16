@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="../static/css/main.css">
+
 <title>Pine Sap API</title>
 </head>
 <body>
@@ -17,22 +18,24 @@
     <div>
         <ul id="horizontal-list">
             <a href="{{ url_for('site.home') }}">
-                <li>The Pine Sap API</li>
+                <li>
+                    <img id="navbar_img" src="../static/images/small_pine_logo.png" alt="Pine sap logo">
+                </li>
             </a>
             <a href="#">
-                <li>Donate</li>
+                <li class="nav_link">Donate</li>
             </a>
             <a href="{{ url_for('site.profile') }}">
-                <li>Profile</li>
+                <li class="nav_link">Profile</li>
             </a>
             <a href="#">
-                <li>Log Out</li>
+                <li class="nav_link">Log Out</li>
             </a>
             <a href="{{ url_for('auth.signin') }}">
-                <li>Sign In</li>
+                <li class="nav_link">Sign In</li>
             </a>
             <a href="{{ url_for('auth.signup') }}">
-                <li>Sign Up</li>
+                <li class="nav_link">Sign Up</li>
             </a>
         </ul>
     </div>
